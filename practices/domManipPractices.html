@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DomManip</title>
+    <link rel="stylesheet" href="./domCSS.css">
+</head>
+<body>
+
+    <h1>DOM Manipulation Exercise</h1>
+    
+    <div id="content">
+        <p id="message">Click the button below to change this message.</p>
+        <ul id="stars">
+            <li>Kobe</li>
+            <li>KG</li>
+            <li>Ant</li>
+            <li>KD</li>
+        </ul>
+
+        <button id="changeBlue">Change Blue</button>
+        <button id="changeRed">Change Red</button>
+        <button id="four" value="4">4</button>
+        <p id="displayNum"></p>
+    </div>
+
+    <button id="changeText">Change Text</button>
+    <button id="toggleStyle">Toggle Highlight</button>
+    <button id="hideElement">Hide Message</button>
+    <button id="showElement" class="hidden">Show Message</button>
+
+
+    
+    <div id="shop">
+        <h3>Shopping list</h3>
+        <ul id="sList">
+
+        </ul>
+        <input type="text" name="item" id="items">
+        <button onclick="addtoList()">Add to list</button>
+        <button id="add">Add</button>
+        <button id="remove">Remove</button>
+    </div>
+
+
+    <h1>Event handlers</h1>
+    <div id="eventH">
+        
+    <button id="oneB"> Button one</button>
+    <button id="twoB">Button two</button>
+    <button id="threeB">Button Three</button>
+
+    </div>
+    
+
+    <div>
+        <h1>Form Submission</h1>
+        <form action="" id="myForm">
+            <label for="userName">Username:</label>
+            <input type="text" name="userName" id="userName" required>
+            <label for="userPassword">Password</label>
+            <input type="text" name="userPassword" id="userPassword">
+            <button type="submit">Send it</button>
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <div>  
+
+        <h1 id="select">Yo</h1>
+
+        <p id="pSelect">1.6.25</p>
+
+        <button id="pButton"> Button</button>
+
+
+    </div>
+
+    <div>
+
+        <h1 id="hClick">Click me</h1>
+        <button id="clickMe">Click</button>
+
+    </div>
+
+    <script src="./domJs.js"></script>
+</body>
+</html>
