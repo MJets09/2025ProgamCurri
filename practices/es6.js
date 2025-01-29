@@ -49,3 +49,57 @@ const addOne = (arr) => {
 
 addOne(myNums)
 
+//Template Literals
+// let urName = prompt('What is your name?')
+// let urAge = prompt('What is your Age?')
+
+let myName = (a,b) => {
+    console.log(`Your name is ${a} and your age is ${b}`);
+}
+
+// myName(urName, urAge)
+
+
+//Object Destructuring
+const w1 = {
+    name: 'SunJian',
+    kingdom: 'Wu'
+
+}
+
+let w2 = {
+    name2: 'CaoCao',
+    kingdom2: 'Wei'
+}
+
+
+const {name, kingdom} = w1;
+
+const {name2, kingdom2} = w2;
+
+
+console.log(name2)
+
+console.log(`In 221 AD, ${name}'s army fought ${name2}'s army.`)
+
+//Array destructuring
+let nArray = [5,6,9,7];
+
+let [a,b ,...rest] = nArray;
+
+console.log(b)
+
+//SpreadOperator
+
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+
+console.log(...arr1, ...arr2)
+
+//DefaultParameters
+
+let greetMe = (a,b = 'Yo') => {
+    console.log(`Yo hows it going ${a}, ${a} you gotta say something back like ${b}`)
+}
+
+greetMe('Joey')
