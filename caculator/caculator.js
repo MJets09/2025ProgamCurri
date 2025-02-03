@@ -1,7 +1,18 @@
 let input = document.getElementById('display');
-let one = document.getElementById('one');
+let add = document.getElementById('+');
+let equals = document.getElementById('=');
+
+document.getElementById('tableDiv').addEventListener('click', function(event) {
+    if(event.target.tagName === 'BUTTON' && event.target.id !== '=') {
+        input.value += event.target.value;
+    }
+})
 
 
-one.addEventListener('click', function(){
-    console.log('YO')
+document.getElementById('clear').addEventListener('click', function() {
+    input.value = ''
+})
+
+equals.addEventListener('click', function(){
+    input.value = eval(input.value);
 })
