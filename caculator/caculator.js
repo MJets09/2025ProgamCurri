@@ -14,5 +14,10 @@ document.getElementById('clear').addEventListener('click', function() {
 })
 
 equals.addEventListener('click', function(){
-    input.value = eval(input.value);
+    try {
+        input.value = eval(input.value);
+    }
+    catch (error) {
+        input.value = 'Error';
+    }
 })
