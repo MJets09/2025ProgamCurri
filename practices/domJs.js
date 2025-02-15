@@ -138,3 +138,25 @@ console.log(numbers); // Output: [2, 4, 6]
 document.getElementById('clickMe').addEventListener('click', function(){
     document.getElementById('hClick').textContent = 'The world is Yours'
 })
+
+
+// document.getElementById('tagChange').addEventListener('click', function() {
+//     document.getElementById('tag').textContent = 'changed'
+// })
+
+function tagChange() {
+    let tagged = document.getElementById('tag');
+
+    tagged.innerHTML = 'Goku'
+    tagged.classList.add('base')
+}
+
+function targetGoku() {
+    let tagged = document.getElementById('tag');
+
+    if (tagged.style.display === "none") {
+      tagged.style.display = "block";
+    } else {
+      tagged.style.display = "none";
+    }
+}
