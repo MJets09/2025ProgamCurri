@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
+import styles from "./listGroup.module.css"
 
 interface ListGroupProps {
   items: string[];
   heading: string;
-  onSelectItem: (item: string) => void;
+  onSelectItem?: (item: string) => void;
 }
 
 function ListGroup({ items, heading, onSelectItem }: ListGroupProps) {
@@ -15,18 +16,16 @@ function ListGroup({ items, heading, onSelectItem }: ListGroupProps) {
     <>
       <h1>{heading}</h1>
       {items.length === 0 && <p>No items list</p>}
-      <ul className="list-group">
+      <ul className={styles.listGroup}>
         {items.map((items, index) => (
           <li
-            className={
-              selectIndex === index
-                ? "list-group-item active"
-                : "list-group-item"
-            }
+            className={`list-group-item ${selectIndex === index ? 'active' : ''} listGroup`}
             key={index}
             onClick={() => {
               SetIndex(index);
-              onSelectItem(items);
+              if (onSelectItem) {
+                onSelectItem(items);
+              }
             }}
           >
             {items}
