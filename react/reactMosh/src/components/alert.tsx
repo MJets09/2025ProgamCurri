@@ -1,7 +1,7 @@
 //Shortcut for React Arrow Function Export Component
 //rafce shortcut
 
-import "./alert.module.css"
+import styles from './alert.module.css'
 
 interface Props {
   children: string;
@@ -12,7 +12,7 @@ const Alert = ({ children, onClose }: Props) => {
   return (
     <div className="alert alert-primary alert-dismissable">
       {children}
-      <button type="button" className="btn-close" data-bs-dismiss="alert"aria-label="Close" onClick={onClose}>X</button>
+      <button type="button" className={styles.listGroup} data-bs-dismiss="alert"aria-label="Close" onClick={onClose}>Remove</button>
     </div>
   );
 };
