@@ -16,24 +16,45 @@
 
 
 
-import React from 'react'
-import { useState } from 'react'
+// import React from 'react'
+// import { useState } from 'react'
 
 
-const Counter = () => {
+// const Counter = () => {
+
+//   const [count, setCount] = useState(0);
+
+//   return (
+//     <>
+    
+//     <p>Count: {count}</p>
+//     <button onClick={() => setCount(count+1)}>Increase</button>
+//     <button onClick={() => setCount(0)}>Reset</button>
+//     <button onClick={() => setCount(count-1)}>Decrease</button>
+    
+//     </>
+//   )
+// }
+
+// export default Counter;
+
+import React, { useState } from "react";
+
+export default function Counter() {
 
   const [count, setCount] = useState(0);
 
-  return (
-    <>
-    
-    <p>Count: {count}</p>
-    <button onClick={() => setCount(count+1)}>Increase</button>
-    <button onClick={() => setCount(0)}>Reset</button>
-    <button onClick={() => setCount(count-1)}>Decrease</button>
-    
-    </>
-  )
-}
 
-export default Counter;
+  return(
+
+    <>
+    <h1>Count: {count}</h1>
+    <button onClick={()=> setCount(count+1)}>Increase</button>
+    <button onClick={()=> setCount(0)}>Reset</button>
+    <button onClick={()=> setCount(count-1)}>Descrease</button>
+    </>
+
+
+  )
+
+}

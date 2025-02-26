@@ -1,15 +1,16 @@
 import { useState } from "react";
-import { AiFillMoon } from "react-icons/ai";
+import { BiAnchor } from "react-icons/bi";
+
 
 const LikeButton = () => {
 
     const [status, setStatus] = useState(false)
 
     if(status === true){
-        return <AiFillMoon color="red" size='50' onClick={()=> setStatus(false)} ></AiFillMoon>
+        return <BiAnchor color="red" size='50' onClick={()=> setStatus(false)} ></BiAnchor>
     }
     else{
-        return <AiFillMoon color="black" size='50' onClick={()=> setStatus(true)}></AiFillMoon>
+        return <BiAnchor color="black" size='50' onClick={()=> setStatus(true)}></BiAnchor>
     }
 }
 
