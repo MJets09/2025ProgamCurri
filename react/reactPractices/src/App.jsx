@@ -6,6 +6,9 @@ import ToggleMessage from './components/toggleM'
 import Counter from './components/counter'
 import DarkMode from './components/DarkMode/DarkMode'
 import ArrayList from './components/ArrayList';
+import Greetings from './components/Greetings'
+import Profile from './components/Profile'
+
 
 function App() {
 
@@ -18,6 +21,8 @@ function App() {
       <ToggleMessage></ToggleMessage>
       <DarkMode></DarkMode>
       <ArrayList array={items}></ArrayList>
+      <Greetings name={'Joe'}></Greetings>
+      <Profile name={'Amen'} age={20} location={'Houston'}></Profile>
     </>
   )
 }
