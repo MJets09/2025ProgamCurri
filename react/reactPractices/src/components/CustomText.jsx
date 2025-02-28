@@ -14,10 +14,7 @@ const CustomText = ({customText}) => {
     Change the word
 
     </button>
-    
-    
-    
-    
+        
     </>
   )
 }

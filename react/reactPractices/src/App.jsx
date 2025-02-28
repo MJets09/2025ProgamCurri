@@ -9,6 +9,7 @@ import ArrayList from './components/ArrayList';
 import Greetings from './components/Greetings'
 import Profile from './components/Profile'
 import CustomText from './components/CustomText'
+import NoBeuno from './components/NoBeunoZero'
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       <Greetings name={'Joe'}></Greetings>
       <Profile name={'Amen'} age={20} location={'Houston'}></Profile>
       <CustomText customText={'Amen'}></CustomText>
+      <NoBeuno></NoBeuno>
     </>
   )
 }
