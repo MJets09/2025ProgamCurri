@@ -5,26 +5,57 @@ import ListGroup from "./components/listGroup";
 import LikeButton from "./components/likeButton";
 import Array from "./components/Array";
 
-let Wu = ['Sun Ce', 'Sun Jian']
-let Shu = ['Liu Bei','Guan Yu','Zhang Fei']
+let Wu = ["Sun Ce", "Sun Jian"];
+let Shu = ["Liu Bei", "Guan Yu", "Zhang Fei"];
 
 function App() {
+  const [visible, SetVisible] = useState(false);
 
-  const [visible, SetVisible] = useState(false)
+  const [firstName, setFirstName] = useState("Terry");
 
+  const [drink, setDrink] = useState({
+    drinkName: "SoDoSoPa",
+    price: 5,
+  });
+
+  let updateDrink = () => {
+    //Use the spread operator which will copy the object and we'll just update the prop
+    //Powerful tool the spread operator is, get comfortable with it
+
+    setDrink({ ...drink, drinkName: "Shi Tpa Town" });
+  };
 
   return (
-
     <>
-    {visible && <Alert onClose={() => SetVisible(false)}>Hi</Alert>}
-    <Button onClick={() => SetVisible(true)}>Yo</Button>
-    <Array array={Shu}></Array>
-    <ListGroup items={Wu} heading="Wu"></ListGroup>
-    <LikeButton></LikeButton>
+      {visible && <Alert onClose={() => SetVisible(false)}>Hi</Alert>}
+      <Button onClick={() => SetVisible(true)}>Yo</Button>
+      <Button onClick={() => setFirstName("Bogard")}>{firstName}</Button>
+      <Button onClick={() => updateDrink()}>
+        Your drink is {drink.drinkName}
+      </Button>
+      <Array array={Shu}></Array>
+      <ListGroup items={Wu} heading="Wu"></ListGroup>
+      <LikeButton></LikeButton>
     </>
-
-
-  )
+  );
 }
 
 export default App;
+
+const [customer, setCustomer] = useState({
+
+  name: 'Ryan',
+  address: {
+    State: 'MN',
+    City: 'Minnetonka'
+  },
+  zipCode: 545
+
+})
+
+setCustomer({
+  //When copying objects using spread operator, call the object and link the object inside of it
+  ...customer, address: customer.address, zipCode : 555
+})
+
+
