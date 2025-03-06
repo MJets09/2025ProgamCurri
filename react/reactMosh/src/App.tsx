@@ -25,6 +25,15 @@ function App() {
     setDrink({ ...drink, drinkName: "Shi Tpa Town" });
   };
 
+  const [city, setCity] = useState({
+    city: 'Minneapolis',
+    state: 'MN'
+  })
+
+  let updateCity = () => {
+    setCity({...city, city: 'Saint Paul'})
+  }
+
   return (
     <>
       {visible && <Alert onClose={() => SetVisible(false)}>Hi</Alert>}
@@ -33,6 +42,7 @@ function App() {
       <Button onClick={() => updateDrink()}>
         Your drink is {drink.drinkName}
       </Button>
+      <Button onClick={()=> updateCity()}>You live in {city.city}</Button>
       <Array array={Shu}></Array>
       <ListGroup items={Wu} heading="Wu"></ListGroup>
       <LikeButton></LikeButton>
@@ -42,20 +52,20 @@ function App() {
 
 export default App;
 
-const [customer, setCustomer] = useState({
+// const [customer, setCustomer] = useState({
 
-  name: 'Ryan',
-  address: {
-    State: 'MN',
-    City: 'Minnetonka'
-  },
-  zipCode: 545
+//   name: 'Ryan',
+//   address: {
+//     State: 'MN',
+//     City: 'Minnetonka'
+//   },
+//   zipCode: 545
 
-})
+// })
 
-setCustomer({
-  //When copying objects using spread operator, call the object and link the object inside of it
-  ...customer, address: customer.address, zipCode : 555
-})
+// setCustomer({
+//   //When copying objects using spread operator, call the object and link the object inside of it
+//   ...customer, address: customer.address, zipCode : 555
+// })
 
 
