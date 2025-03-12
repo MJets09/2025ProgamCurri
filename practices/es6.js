@@ -103,3 +103,48 @@ let greetMe = (a,b = 'Yo') => {
 }
 
 greetMe('Joey')
+
+
+  const [mlbPlayer, setMlb] = useState(['Ohtani','Betts','Freeman', 'Hernandez']);
+
+  const removeHern = () => {
+    setMlb(mlbPlayer.filter(player => player !== 'Hernandez'))
+  }
+
+
+  //Filter practice, you need more practice on  array/object methods. Sharpen those tools.
+
+  const names = ["Alice", "Bob", "Charlie", "Smith", "David"];
+
+  let newNames = names.filter(pName => {
+
+    return pName !== 'David'
+
+  }).map(pName => {return `Your new names are ${pName}`})
+  
+
+  console.log(newNames)
+
+
+  let upDateName = mlbPlayer.map(playerName => playerName == 'Ohtani' ? 'Shohei' : playerName)
+
+
+  console.log(upDateName)
+
+
+// const [customer, setCustomer] = useState({
+
+//   name: 'Ryan',
+//   address: {
+//     State: 'MN',
+//     City: 'Minnetonka'
+//   },
+//   zipCode: 545
+
+// })
+
+// setCustomer({
+//   //When copying objects using spread operator, call the object and link the object inside of it
+//   ...customer, address: customer.address, zipCode : 555
+// })
+

@@ -160,3 +160,7 @@ function targetGoku() {
       tagged.style.display = "none";
     }
 }
+
+let myArr = [2,6,3];
+
+myArr.length !== 1 ? console.log('Less than 1') : console.log('More than 1')
