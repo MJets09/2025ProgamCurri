@@ -41,6 +41,21 @@ const users = [
     { name: 'David', age: 16 }
   ];
   const filterAdults = (arr) => {
-    arr.age.filter(age => age > 18)
+    arr.filter(age => age > 18)
   };
-  console.log(filterAdults(users)); 
+
+  const nUsers = [
+    { name: "Alice", age: 25, active: true },
+    { name: "Bob", age: 31, active: false },
+    { name: "Charlie", age: 22, active: true }
+  ];
+
+  const overThirty = (arr) => {
+    return arr.filter(age => age.age > 30)
+  }
+
+
+  console.log(overThirty(nUsers))
+
+
+  
