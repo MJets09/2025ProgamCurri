@@ -10,6 +10,7 @@ import Greetings from './components/Greetings'
 import Profile from './components/Profile'
 import CustomText from './components/CustomText'
 import NoBeuno from './components/NoBeunoZero'
+import Hello from './helllo'
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <Profile name={'Amen'} age={20} location={'Houston'}></Profile>
       <CustomText customText={'Amen'}></CustomText>
       <NoBeuno></NoBeuno>
+      <Hello name="Mary"></Hello>
     </>
   )
 }

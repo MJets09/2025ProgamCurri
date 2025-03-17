@@ -10,7 +10,7 @@ const DarkMode = () => {
         className={theme && Styles.changeBtn}
         onClick={() => setTheme(!theme)}
       >
-        Changed
+        Change
       </button>
     </>
   );
