@@ -5,11 +5,16 @@ import ListGroup from "./components/listGroup";
 import LikeButton from "./components/likeButton";
 import Array from "./components/Array";
 import { produce } from "immer";
+import NavBar from "./components/NavBar";
+import Cart from "./components/Cart";
 
-let Wu = ["Sun Ce", "Sun Jian"];
-let Shu = ["Liu Bei", "Guan Yu", "Zhang Fei"];
+
 
 function App() {
+  const [Wu, setWu] = useState(["Sun Jian", "Sun Ce", "Sun Quan"
+  ])
+  let Shu = ["Liu Bei", "Guan Yu", "Zhang Fei"];
+
   const [visible, SetVisible] = useState(false);
 
   const [firstName, setFirstName] = useState("Terry");
@@ -79,8 +84,9 @@ function App() {
       <Array array={Shu}></Array>
       <ListGroup items={Wu} heading="Wu"></ListGroup>
       <LikeButton></LikeButton>
-
       {shoe.map(shoe => <p>{shoe.model}: {shoe.have} </p>)}
+      <NavBar cartItemsCount={Wu.length}></NavBar>
+      <Cart cartItems={Wu} onClear={() => setWu([])}></Cart>
     </>
   );
 }
