@@ -76,3 +76,51 @@ const users = [
 
 
   console.log(myYen)
+
+
+  //Imagine you're building an e-commerce site. Given an array of products, return only the ones that are in stock.
+
+  const products = [
+    { name: "Laptop", price: 1200, inStock: true },
+    { name: "Phone", price: 800, inStock: false },
+    { name: "Tablet", price: 600, inStock: true }
+  ];
+  
+  const availableProducts = (x) => {
+    const newArr = x.filter(ele => ele.inStock === true)
+    return newArr
+  }
+  
+  console.log(availableProducts(products));
+
+  const userS = [
+    { name: "Alice", age: 25, isActive: true },
+    { name: "Bob", age: 30, isActive: false },
+    { name: "Charlie", age: 22, isActive: true },
+    { name: "David", age: 35, isActive: false }
+  ];
+  
+  // Write a function to filter only active users
+  const activeUsers = (x) => {
+    const newAr = x.filter(valid => valid.isActive).map(user => user.name)
+    return newAr
+  }
+  
+  console.log(userS[2].name)
+
+
+  //You have a list of users, and you need to return an array of their names in uppercase.
+  const userCap = [
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" },
+    { id: 3, name: "Charlie" }
+  ];
+  
+  const upperCaseNames = (x) => {
+    
+    return allCaps = x.map(arr => arr.name.toUpperCase())
+
+  }
+  
+  console.log(upperCaseNames(userCap));
+  
