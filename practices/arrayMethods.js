@@ -58,4 +58,21 @@ const users = [
   console.log(overThirty(nUsers))
 
 
+  //Map method
   
+
+  //Convert USD to Yen
+
+  const convert2Yen = (x) => {
+      yen = x * 149.33
+
+      return yen
+  }
+
+
+  let myAccount = [500,333,653,15435];
+
+  let myYen = myAccount.map(convert2Yen);
+
+
+  console.log(myYen)
