@@ -124,3 +124,18 @@ const users = [
   
   console.log(upperCaseNames(userCap));
   
+  //
+
+  const cart = [
+    { item: "Keyboard", price: 50 },
+    { item: "Monitor", price: 200 },
+    { item: "Mouse", price: 30 }
+  ];
+  
+  const totalCost = (x) => {
+
+    return x.reduce((acc,num) => acc + num, 0)
+
+  }
+  
+  console.log(totalCost(cart));
