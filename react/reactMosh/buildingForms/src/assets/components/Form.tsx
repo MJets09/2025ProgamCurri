@@ -1,15 +1,17 @@
 import { FormEvent, useRef } from "react";
-import {FieldValues, useForm} from 'react-hook-form'
+import { FieldValues, useForm } from "react-hook-form";
 
 const Form = () => {
+  // const {register, handleSubmit} = useForm()
+  // const onSubmit = (data: FieldValues) => console.log(data)
 
-  const {register, handleSubmit} = useForm()
-  const onSubmit = (data: FieldValues) => console.log(data)
-
- 
   // const nameRef = useRef<HTMLInputElement>(null);
   // const ageRef = useRef<HTMLInputElement>(null);
   // const person = {name: '', age: 0};
+
+  const {register, handleSubmit} = useForm();
+  
+  const onSubmit = (data: FieldValues) => console.log(data)
 
   const handleClick = (event: FormEvent) => {
     // event.preventDefault();
@@ -17,9 +19,7 @@ const Form = () => {
     //   person.name = nameRef.current.value;
     // if(ageRef.current !== null)
     //   person.age = parseInt(ageRef.current.value);
-
     // console.log(person)
-
   };
 
   return (
@@ -28,14 +28,14 @@ const Form = () => {
         <label htmlFor="name" className="form-label">
           Name
         </label>
-        <input {...register('name')} id="name" type="text" className="form-control" />
+        <input {...register('name')}id="name" type="text" className="form-control" />
       </div>
 
       <div className="mb-3">
         <label htmlFor="age" className="form-label">
           Age
         </label>
-        <input  {...register('age')}id="age" type="number" className="form-control" />
+        <input {...register('age')}id="age" type="number" className="form-control" />
       </div>
 
       <button className="btn btn-primary" type="submit">
