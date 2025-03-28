@@ -139,3 +139,17 @@ const users = [
   }
   
   console.log(totalCost(cart));
+
+
+  const numbeR = [1, 2, 3, 4, 5,6,7,8,9];
+
+  const nums = numbeR.map(data => data *2)
+
+  console.log(nums)
+
+
+  const fahrenheitTemps = [32, 68, 100, 212]
+
+  const temps = fahrenheitTemps.map(data => (data - 30) / 2)
+
+  console.log(temps)
