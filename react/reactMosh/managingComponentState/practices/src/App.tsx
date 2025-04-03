@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <h1>Practices</h1>
-      <ListGroup items={Wu}></ListGroup>
+      <ListGroup arr={Wu}></ListGroup>
     </>
   );
 }
