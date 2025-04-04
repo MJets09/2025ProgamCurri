@@ -1,10 +1,10 @@
 //Click button to alert
 
 interface Props {
-    onClose: () =>
+    onClose: () => void
 }
 
-export default function ShowHide() {
+export default function ShowHide({onClose}: Props) {
 
 
 
@@ -12,7 +12,7 @@ export default function ShowHide() {
 
         <>
         
-        
+        <button onClick={onClose}>Click to Hide</button>
         </>
 
     )
