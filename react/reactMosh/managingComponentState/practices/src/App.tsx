@@ -23,13 +23,16 @@ function App() {
     SetW((prevList) => [...prevList, inputValueWu]);
     setInputValueWu('')
 }
-
+  const handleDelete = (item: string) => {
+      console.log({item})
+      SetW((prevList) => prevList.filter((i) => i !== item));
+  }
 
   return (
     <>
       <h1>Practices</h1>
       <div>
-        <ListGroup arr={wList}></ListGroup>
+        <ListGroup arr={wList} onDelete={handleDelete}></ListGroup>
         <ShowHide onClose={() => SetClose(!close)}>Click</ShowHide>
         {close && <button onClick={() => SetClose(false)}>Sup</button>}
         <input type="text" value={inputValueWu} onChange={(e) => setInputValueWu(e.target.value)}></input>
@@ -39,7 +42,7 @@ function App() {
       <div>
         <h2>To Do list</h2>
         <ul>
-          <ListGroup arr={list}></ListGroup>
+          <ListGroup arr={list} onDelete={handleDelete}></ListGroup>
           <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)}/>
           <Button onClick={() => handleClick()}>Click</Button>
         </ul>
@@ -49,5 +52,3 @@ function App() {
 }
 
 export default App;
-
-          {/* <Button onSub={() => addList((prevList) => [...prevList, 'Word'])}>Click</Button> */}
