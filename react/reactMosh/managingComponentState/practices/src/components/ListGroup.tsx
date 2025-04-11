@@ -11,7 +11,6 @@ export default function ListGroup({ arr, onDelete }: Prop) {
   const [selectedIndex, setIndex] = useState(-1);
 
   return (
-    <>
       <ul className="list-group">
         {arr.map((item, index) => (
           <li
@@ -32,6 +31,5 @@ export default function ListGroup({ arr, onDelete }: Prop) {
           </li>
         ))}
       </ul>
-    </>
   );
 }
