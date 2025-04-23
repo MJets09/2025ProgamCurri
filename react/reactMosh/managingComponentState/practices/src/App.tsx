@@ -23,6 +23,9 @@ function App() {
   const [nbaTeam, setTeam] = useState('');
   const [nbaList, setNBA] = useState<string[]>(NBA)
 
+  const [rdr2Value, setRdr2Value] = useState('');
+  const [rdr2List, setRDList] = useState<string[]>([]);
+
 
   const handleClick = () => {
       addList((prevList) => [...prevList, inputValue]);
@@ -66,6 +69,14 @@ function App() {
     setTeam('')
   }
 
+  const addRdr2List = () => {
+    setRDList((prevList) => [...prevList, rdr2Value])
+  }
+
+  const deleteRdr2 = (item:string) => {
+    setRDList((prevList) => prevList.filter((i) => i !== item))
+  }
+
   return (
     <>
       <h1>Practices</h1>
@@ -98,6 +109,15 @@ function App() {
         <ListGroup arr={nbaList} onDelete={deleteNBA}></ListGroup>
         <input type="text" value={nbaTeam} onChange={(e)=> {setTeam(e.target.value)}}/>
         <button onClick={addNBA}>Add team</button>
+      </div>
+
+
+
+      <div>
+        <h2>RDR2 To do list</h2>
+        <ListGroup arr={rdr2List} onDelete={deleteRdr2}></ListGroup>
+        <input type="text" value={rdr2Value} onChange={(e) => setRdr2Value(e.target.value)}/>
+        <button onClick={addRdr2List}>Add</button>
       </div>
     </>
   );
