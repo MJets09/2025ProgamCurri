@@ -6,19 +6,19 @@ interface Props {
     category: string;
 }
 
-const ProductList = (category: Props) => {
+const ProductList = ({category}: Props) => {
 
     const [product, setProduct] = useState<string[]>([]);
     
 
     useEffect(()=>{
-        console.log('Fetching product')
+        console.log('Fetching product in', category)
         setProduct(['Clothing', 'Household'])
-    }, [])
+    }, [category])
 
   return (
     <div>
-      <h1>ProductList</h1>
+      <h1>Product List</h1>
     </div>
   )
 }

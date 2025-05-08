@@ -4,16 +4,14 @@ import ProductList from "./assets/components/ProductList";
 
 function App() {
 
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState<string>("");
 
   const ref = useRef<HTMLInputElement>(null);
 
   return (
     <>
       <div>
-        <input type="text" name="" id="" ref={ref}   onChange={(e) => {
-          console.log(category)
-          }}/>
+        <input type="text" name="" id="" ref={ref} />
 
         <select
           className="form-select"
