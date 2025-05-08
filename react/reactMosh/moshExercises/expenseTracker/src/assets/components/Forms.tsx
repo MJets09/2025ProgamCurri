@@ -1,11 +1,16 @@
 import React from "react";
 import {useForm, FieldValues} from "react-hook-form"
 
-const Forms = () => {
+
+interface FormsProps {
+  onAddExpense: (expense:string) => void;
+}
+
+const Forms = ({onAddExpense}: FormsProps) => {
 
 
 const {register, handleSubmit, formState: {errors}} = useForm();
-const onSubmit = (data: FieldValues) => console.log(data);
+const onSubmit = (data: FieldValues) => onAddExpense(data.Description);
 
 
   return (
@@ -21,8 +26,7 @@ const onSubmit = (data: FieldValues) => console.log(data);
           className="form-control"
         />
       </div>
-      
-    <button className="btn btn-primary">Submit</button>
+      <button type="submit" className="btn btn-primary">Add Expense</button>
     </form>
   );
 };
