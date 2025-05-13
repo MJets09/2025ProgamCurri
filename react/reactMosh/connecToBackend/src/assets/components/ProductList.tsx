@@ -13,7 +13,7 @@ const ProductList = ({category}: Props) => {
 
     useEffect(()=>{
         console.log('Fetching product in', category)
-        setProduct(['Clothing', 'Household'])
+        setProduct([category])
     }, [category])
 
   return (

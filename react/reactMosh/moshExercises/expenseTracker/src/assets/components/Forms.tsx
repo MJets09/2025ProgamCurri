@@ -21,8 +21,6 @@ const onSubmit = (data: FieldValues) => onAddExpense(data.Description);
         <input
         {...register('Description')}
           type="text"
-          name="Description"
-          id="Description"
           className="form-control"
         />
       </div>

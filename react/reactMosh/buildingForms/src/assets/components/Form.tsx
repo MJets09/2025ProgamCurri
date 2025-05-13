@@ -2,10 +2,13 @@ import React, { FormEvent, useRef } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 
 const Form = () => {
-  const { register, handleSubmit } = useForm();
-  console.log(register("name"));
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const onSubmit = (data: FieldValues) => console.log(data)
+  const onSubmit = (data: FieldValues) => console.log(data);
 
   // const nameRef = useRef<HTMLInputElement>(null);
   // const ageRef = useRef<HTMLInputElement>(null);
@@ -35,23 +38,31 @@ const Form = () => {
         <div className="mb-3">
           <label htmlFor="userName">Username: </label>
           <input
-            {...register("name")}
+            {...register("name", { required: true, minLength: 3 })}
             // ref={nameRef} Removed the useRef because of react hook forms
             type="text"
             id="userName"
             className="form-control"
           />
+          {errors.name?.type === "required" && (
+            <p className="text-danger">Field is required</p>
+          )}
+          {errors.name?.type === "minLength" && (
+            <p className="text-danger">Name must be at least 3 characters</p>
+          )}
         </div>
 
         <div className="mb-3">
           <label htmlFor="userAge">Age:</label>
           <input
-            {...register("age")}
+            {...register("age", {required: true, minLength: 1})}
             // ref={ageRef} Removed the useRef because of react hook forms
             type="number"
             id="userAge"
             className="form-control"
           />
+          {errors.name?.type === 'required' && <p>Field is required</p>}
+          {errors.name?.type === 'minLength' && <p>Mininum 1 number</p>}
         </div>
 
         <button className="btn btn-primary">Submit</button>
