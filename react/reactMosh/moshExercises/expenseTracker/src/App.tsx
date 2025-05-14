@@ -9,6 +9,7 @@ function App() {
 
   const addExpense = (expense: string) => {
     setexpenseDescription([...expenseDescription, expense]);
+    
   }
 
   return (

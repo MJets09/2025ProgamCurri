@@ -1,35 +1,41 @@
 import "./App.css";
 import { useRef, useEffect, useState } from "react";
 import ProductList from "./assets/components/ProductList";
-import axios from 'axios';
+import axios from "axios";
 
 interface Props {
   id: number;
   name: string;
   email: string;
+  title: string;
 }
 
-
 function App() {
-
-
   const [category, setCategory] = useState<string>("");
 
   const ref = useRef<HTMLInputElement>(null);
 
-   const [users, setUser] = useState<Props[]>([])
-   const [email, setEmail] = useState<Props[]>([])
+  const [users, setUser] = useState<Props[]>([]);
+  const [email, setEmail] = useState<Props[]>([]);
+  const [posts, setPost] = useState<Props[]>([]);
 
+  useEffect(() => {
+    axios
+      .get<Props[]>("https://jsonplaceholder.typicode.com/users")
+      .then((res) => {
+        setUser(res.data);
+        console.log(res);
+      });
+    axios.get("https://jsonplaceholder.typicode.com/users").then((res) => {
+      setEmail(res.data);
+    });
+  }, []);
 
-   useEffect(()=> {
-    axios.get<Props[]>('https://jsonplaceholder.typicode.com/users')
-    .then(res => {setUser(res.data); console.log(res)})
-   }, [])
-
-   useEffect(()=> {
-    axios.get('https://jsonplaceholder.typicode.com/users')
-    .then(res => {setEmail(res.data)})
-   }, [])
+  useEffect(() => {
+    axios.get("https://jsonplaceholder.typicode.com/posts").then((res) => {
+      setPost(res.data);
+    });
+  });
 
   return (
     <>
@@ -49,18 +55,23 @@ function App() {
         </select>
 
         <ProductList category={category}></ProductList>
-        
+
         <ul>
-          {users.map((user) => <li key={user.id}>{user.name}</li>)}
+          {users.map((user) => (
+            <li key={user.id}>{user.name}</li>
+          ))}
+        </ul>
+        <ul>
+          {email.map((user) => (
+            <li key={user.id}>{user.email}</li>
+          ))}
         </ul>
       </div>
-
-      <ul>
-        {email.map((email) => <li key={email.id}>{email.email}</li>)}
-      </ul>
-
-      {users.map((user) => console.log(user))}
-
+      <div>
+        <ul>
+          {posts.map((post)=> <li key={post.id}>{post.title}</li>)}
+        </ul>
+      </div>
     </>
   );
 }
