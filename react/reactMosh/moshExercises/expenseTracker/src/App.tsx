@@ -1,23 +1,25 @@
-import { useState } from 'react'
-import './App.css'
-import ListGroup from './assets/components/ListGroup'
-import Forms from './assets/components/Forms'
+import { useState } from "react";
+import "./App.css";
+import ExpenseList from "./assets/components/ExpenseList";
 
 function App() {
-
-  const [expenseDescription, setexpenseDescription] = useState<string[]>([])
-
-  const addExpense = (expense: string) => {
-    setexpenseDescription([...expenseDescription, expense]);
-    
-  }
+  const expenses = [
+    {
+      id: 1,
+      description: "Shoes",
+      amount: 180,
+      category: "Bullshit",
+    },
+  ];
 
   return (
     <>
-    <Forms onAddExpense={addExpense}></Forms>
-      <ListGroup array={expenseDescription}></ListGroup>
+      <ExpenseList
+        expenses={expenses}
+        onDelete={(id) => console.log("Working", id)}
+      ></ExpenseList>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
