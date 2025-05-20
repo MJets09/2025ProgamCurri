@@ -1,13 +1,17 @@
 import { useState } from "react";
 import "./App.css";
 import ExpenseList from "./assets/components/ExpenseList";
+import PracticeExpense from "./assets/components/practiceExpense";
 
 function App() {
-  const [expenses, setExpenses] = useState([
+
+
+
+  const [expenseList, setExpenseList] = useState([
     {
       id: 1,
       description: "Shoes",
-      amount: 180,
+      amount: 280,
       category: "Bullshit",
     },
     {
@@ -20,10 +24,10 @@ function App() {
 
   return (
     <>
-      <ExpenseList
-        expenses={expenses}
-        onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
-      ></ExpenseList>
+      <PracticeExpense
+        expense={expenseList}
+        onDelete={(id) => setExpenseList(expenseList.filter( e => e.id !== id))}
+      ></PracticeExpense>
     </>
   );
 }
