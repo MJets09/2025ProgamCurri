@@ -11,7 +11,7 @@ import Profile from './components/Profile'
 import CustomText from './components/CustomText'
 import NoBeuno from './components/NoBeunoZero'
 import Hello from './helllo'
-
+import Message from './components/Message'
 
 function App() {
 
@@ -29,6 +29,7 @@ function App() {
       <CustomText customText={'Amen'}></CustomText>
       <NoBeuno></NoBeuno>
       <Hello name="Mary"></Hello>
+      <Message></Message>
     </>
   )
 }
