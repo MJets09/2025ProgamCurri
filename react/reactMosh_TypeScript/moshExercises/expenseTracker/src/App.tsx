@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import ExpenseList from "./assets/components/ExpenseList";
-import PracticeExpense from "./assets/components/practiceExpense";
+import PracticeExpense from "./assets/components/PracticeExpense";
 
 function App() {
 
