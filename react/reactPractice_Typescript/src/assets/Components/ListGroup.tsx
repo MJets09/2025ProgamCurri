@@ -8,7 +8,7 @@ interface adventurers {
 
 interface Props {
   list: adventurers[];
-  addAventurer: () => void;
+  addAventurer: (id:string) => void;
 }
 
 const ListGroup = ({ list, addAventurer }: Props) => {
@@ -30,11 +30,14 @@ const ListGroup = ({ list, addAventurer }: Props) => {
               <td>{hero.name}</td>
               <td>{hero.class}</td>
               <td>{hero.age}</td>
+              <td><button className="btn btn-primary" onClick={()=> addAventurer(hero.name)}>Delete</button></td>
             </tr>
+            
           ))}
+          
         </tbody>
       </table>
-      <button className="btn btn-primary" onClick={addAventurer}>Add Adventurer</button>
+      
     </div>
   );
 };
