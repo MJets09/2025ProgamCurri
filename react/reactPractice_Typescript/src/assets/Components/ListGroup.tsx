@@ -8,11 +8,11 @@ interface adventurers {
 
 interface Props {
   list: adventurers[];
-  addAventurer: (id:string) => void;
+  removeAdventurer: (id: string) => void;
 }
 
-const ListGroup = ({ list, addAventurer }: Props) => {
-  if (list.length === 0) return <p>No  Adventurers have arrived</p>;
+const ListGroup = ({ list, removeAdventurer }: Props) => {
+  if (list.length === 0) return <p>No Adventurers have arrived</p>;
 
   return (
     <div>
@@ -30,14 +30,18 @@ const ListGroup = ({ list, addAventurer }: Props) => {
               <td>{hero.name}</td>
               <td>{hero.class}</td>
               <td>{hero.age}</td>
-              <td><button className="btn btn-primary" onClick={()=> addAventurer(hero.name)}>Delete</button></td>
+              <td>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => removeAdventurer(hero.name)}
+                >
+                  Delete
+                </button>
+              </td>
             </tr>
-            
           ))}
-          
         </tbody>
       </table>
-      
     </div>
   );
 };

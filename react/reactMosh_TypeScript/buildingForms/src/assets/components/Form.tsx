@@ -55,14 +55,14 @@ const Form = () => {
         <div className="mb-3">
           <label htmlFor="userAge">Age:</label>
           <input
-            {...register("age", {required: true, minLength: 1})}
+            {...register("age", { required: true, minLength: 1 })}
             // ref={ageRef} Removed the useRef because of react hook forms
             type="number"
             id="userAge"
             className="form-control"
           />
-          {errors.name?.type === 'required' && <p>Field is required</p>}
-          {errors.name?.type === 'minLength' && <p>Mininum 1 number</p>}
+          {errors.name?.type === "required" && <p>Field is required</p>}
+          {errors.name?.type === "minLength" && <p>Mininum 1 number</p>}
         </div>
 
         <button className="btn btn-primary">Submit</button>

@@ -1,31 +1,39 @@
-import { useState } from 'react'
-import './App.css'
-import ListGroup from './assets/Components/ListGroup'
+import { useState } from "react";
+import "./App.css";
+import ListGroup from "./assets/Components/ListGroup";
+import Header from "./assets/Components/Header";
+import AdventureForm from "./assets/Components/AdventureForm";
 
 function App() {
+  const adventurers = [
+    {
+      name: "Sendoh",
+      class: "Samurai",
+      age: 20,
+    },
+    {
+      name: "Maki",
+      class: "Warrior",
+      age: 20,
+    },
+  ];
 
-  const adventurers = [{
-    name: 'Sendoh',
-    class: 'Samurai',
-    age: 20
-  }, {
-    name: 'Maki',
-    class: 'Warrior',
-    age: 20
-  }];
+  const [adventure, setAdventure] = useState(adventurers);
 
-  const [adventure, setAdventure] = useState<typeof adventurers>(adventurers)
-
-  function addAventurer(removeName: string) {
-    setAdventure(adventure.filter((e)=> e.name !== removeName))
+  function removeAdventurer(removeName: string) {
+    setAdventure(adventure.filter((e) => e.name !== removeName));
   }
 
   return (
-
     <>
-     <ListGroup list={adventure} addAventurer={addAventurer}></ListGroup>
+      <Header child={"Practices"}></Header>
+      <ListGroup
+        list={adventure}
+        removeAdventurer={removeAdventurer}
+      ></ListGroup>
+      <AdventureForm></AdventureForm>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
