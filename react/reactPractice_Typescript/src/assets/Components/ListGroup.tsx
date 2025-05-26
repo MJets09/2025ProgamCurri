@@ -2,7 +2,7 @@ import React from "react";
 
 interface adventurers {
   name: string;
-  class: string;
+  classType: string;
   age: number;
 }
 
@@ -28,11 +28,11 @@ const ListGroup = ({ list, removeAdventurer }: Props) => {
           {list.map((hero, id) => (
             <tr key={id}>
               <td>{hero.name}</td>
-              <td>{hero.class}</td>
+              <td>{hero.classType}</td>
               <td>{hero.age}</td>
               <td>
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-danger"
                   onClick={() => removeAdventurer(hero.name)}
                 >
                   Delete
