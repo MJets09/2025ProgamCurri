@@ -1,43 +1,30 @@
-import { useState } from "react";
-import styles from "./listGroup.module.css"
+import React, { useState } from "react";
 
-
-
-interface ListGroupProps {
-  items: string[];
-  heading: string;
-  onSelectItem?: (item: string) => void;
+interface Props {
+  array: string[];
 }
 
-function ListGroup({ items, heading, onSelectItem }: ListGroupProps) {
-  // items = [];
-  //Each component has its own useState
-  const [selectIndex, SetIndex] = useState(-1);
+const ListGroup = ({ array }: Props) => {
+  const [active, setActive] = useState<number | null>(null);
 
   return (
     <>
-      <h1>{heading}</h1>
-      {items.length === 0 && <p>No items list</p>}
-      <ul className={`${styles.listGroup} active`}>
-        {items.map((items, index) => (
-          <li
-            className={`list-group-item ${selectIndex === index ? 'active' : ''} listGroup`}
-            key={index}
-            onClick={() => {
-              SetIndex(index);
-              if (onSelectItem) {
-                onSelectItem(items);
-              }
-            }}
-          >
-            {items}
-          </li>
-        ))}
-      </ul>
+      {array.length === 0 && <p>Nothing to see</p>}
+      <div className="container d-flex justify-content-center mt-5">
+        <ul className="list-group">
+          {array.map((element, id) => (
+            <li
+              key={id}
+              className={`list-group-item ${active === id ? "active" : ""}`}
+              onClick={() => setActive(id)}
+            >
+              {element}
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
-}
+};
 
 export default ListGroup;
-
-//Ctrl + D to select multiple names and edit ever iteration
