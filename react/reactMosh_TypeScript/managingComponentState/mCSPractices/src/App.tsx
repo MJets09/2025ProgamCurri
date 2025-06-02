@@ -3,6 +3,8 @@ import "./App.css";
 import OnandOff from "./components/OnandOff";
 import FreeText from "./components/FreeText";
 import Arrays from "./components/Arrays";
+import Counter from "./components/Counter";
+import TogglePara from "./components/TogglePara";
 
 function App() {
   let myShoes = [
@@ -19,6 +21,8 @@ function App() {
       <OnandOff></OnandOff>
       <FreeText></FreeText>
       <Arrays shoes={myShoes}></Arrays>
+      <Counter></Counter>
+      <TogglePara></TogglePara>
     </>
   );
 }
