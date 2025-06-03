@@ -16,11 +16,15 @@ function App() {
     { model: "Jordan 1", brand: "Nike", yr: 1995 },
   ];
 
+  const check = (item: string) => {
+    console.log(item);
+  };
+
   return (
     <>
       <OnandOff></OnandOff>
       <FreeText></FreeText>
-      <Arrays shoes={myShoes}></Arrays>
+      <Arrays shoes={myShoes} checkClick={check}></Arrays>
       <Counter></Counter>
       <TogglePara></TogglePara>
     </>
