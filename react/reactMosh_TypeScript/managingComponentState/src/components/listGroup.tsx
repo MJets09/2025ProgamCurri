@@ -20,10 +20,10 @@ const ListGroup = ({ array, heading, selectedItem}: Props) => {
           {array.map((element, index) => (
             <li
               key={index}
-              className={`list-group-item ${active === index ? "active" : ""}`}
+              className={`list-group-item ${active === index ? 'active' : ''}`}
               onClick={() => {
                 setActive(index);
-                selectedItem && selectedItem(element)
+                if(selectedItem) selectedItem(element)
               }}
             >
               {element}
