@@ -9,12 +9,14 @@ interface Props {
 const ListGroup = ({ array, heading, selectedItem}: Props) => {
   const [active, setActive] = useState<number | null>(null);
 
+
   return (
     <>
       {array.length === 0 && <p>Nothing to see</p>}
       <h1 className="container d-flex justify-content-center mt-5">
         {heading}
       </h1>
+      
       <div className="container d-flex justify-content-center mt-5">
         <ul className="list-group">
           {array.map((element, index) => (

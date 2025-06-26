@@ -17,6 +17,13 @@ function App() {
     occupation: "Duelist",
   });
 
+    const wolves = [{player: 'Ant',number: 5},{player: 'Jules', number: 1}]
+    const rockets = {player: 'kd', team: {city: 'houston',franchise: 'rockets'}}
+  
+
+    const [team,addPlayer] = useState(wolves)
+    const [kd,changeTeams] = useState(rockets)
+
   return (
     <>
       <ListGroup
@@ -38,6 +45,8 @@ function App() {
         YUGI!?
       </button>
       {user.name === "Yugi" && <p>"I summon Dark Magician"</p>}
+      <button onClick={()=> {addPlayer(team.map((p,i)=> i === 1 ? {...p, player:'Jaden'}: p)); console.log(team)}}>Mapping array with objects and changing one prop</button>
+      <button onClick={()=> {changeTeams({...kd, team: {...kd.team, city: 'texas'}})}}>Update nesting objects</button>
       <CopyText></CopyText>
     </>
   );
