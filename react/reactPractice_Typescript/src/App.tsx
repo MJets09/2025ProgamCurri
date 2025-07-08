@@ -3,6 +3,7 @@ import "./App.css";
 import ListGroup from "./assets/Components/ListGroup";
 import Header from "./assets/Components/Header";
 import AdventureForm from "./assets/Components/AdventureForm";
+import PracticeButton from "./assets/Components/PracticeButton";
 
 function App() {
   const adventurers = [
@@ -38,6 +39,10 @@ function App() {
         removeAdventurer={removeAdventurer}
       ></ListGroup>
       <AdventureForm onSubmit={addAdventurer}></AdventureForm>
+
+      <div>
+        <PracticeButton name={'Ray'}></PracticeButton>
+      </div>
     </>
   );
 }
