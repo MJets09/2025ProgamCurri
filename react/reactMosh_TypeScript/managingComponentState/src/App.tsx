@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ListGroup from "./components/ListGroup";
+import ListGroup from "./components/listGroup";
 import CopyText from "./components/CopyText";
 
 function App() {
@@ -17,12 +17,18 @@ function App() {
     occupation: "Duelist",
   });
 
-    const wolves = [{player: 'Ant',number: 5},{player: 'Jules', number: 1}]
-    const rockets = {player: 'kd', team: {city: 'houston',franchise: 'rockets'}}
-  
+  const wolves = [
+    { player: "Ant", number: 5 },
+    { player: "Jules", number: 1 },
+    { player: "Mikeee", number: 11 },
+  ];
+  const rockets = {
+    player: "kd",
+    team: { city: "houston", franchise: "rockets" },
+  };
 
-    const [team,addPlayer] = useState(wolves)
-    const [kd,changeTeams] = useState(rockets)
+  const [team, updatePlayer] = useState(wolves);
+  const [kd, changeTeams] = useState(rockets);
 
   return (
     <>
@@ -45,8 +51,37 @@ function App() {
         YUGI!?
       </button>
       {user.name === "Yugi" && <p>"I summon Dark Magician"</p>}
-      <button onClick={()=> {addPlayer(team.map((p,i)=> i === 1 ? {...p, player:'Jaden'}: p)); console.log(team)}}>Mapping array with objects and changing one prop</button>
-      <button onClick={()=> {changeTeams({...kd, team: {...kd.team, city: 'texas'}})}}>Update nesting objects</button>
+
+      <div>
+        <button
+          onClick={() => {
+            updatePlayer([...team, { player: "Rudy", number: 12 }]);
+            console.log(team);
+          }}
+        >
+          Add a Player, check console log
+        </button>
+        <button
+          onClick={() => {
+            updatePlayer(
+              team.map((p, i) =>
+                i === 1 ? { ...p, player: "Jaden", number: 3 } : p
+              )
+            );
+            console.log(team);
+          }}
+        >
+          Mapping array with objects and changing one prop
+        </button>
+        <button
+          onClick={() => {
+            changeTeams({ ...kd, team: { ...kd.team, city: "texas" } });
+          }}
+        >
+          Update nesting objects
+        </button>
+      </div>
+
       <CopyText></CopyText>
     </>
   );

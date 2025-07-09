@@ -47,7 +47,6 @@ const AdventureForm = ({ onSubmit }: Props) => {
             onChange={(e) => setClassType(e.target.value)}
           />
         </div>
-
         <div className="mb-3">
           <label htmlFor="age">Age: </label>
           <input

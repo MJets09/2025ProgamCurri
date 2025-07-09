@@ -9,14 +9,12 @@ function App() {
   const adventurers = [
     {
       name: "Sendoh",
-      classType
-      : "Samurai",
+      classType: "Samurai",
       age: 20,
     },
     {
       name: "Maki",
-      classType
-      : "Warrior",
+      classType: "Warrior",
       age: 20,
     },
   ];
@@ -27,8 +25,12 @@ function App() {
     setAdventure(adventure.filter((e) => e.name !== removeName));
   }
 
-  function addAdventurer(newAdventurer: {name: string, classType: string, age: number}) {
-    setAdventure([...adventure, newAdventurer])
+  function addAdventurer(newAdventurer: {
+    name: string;
+    classType: string;
+    age: number;
+  }) {
+    setAdventure([...adventure, newAdventurer]);
   }
 
   return (
@@ -41,7 +43,7 @@ function App() {
       <AdventureForm onSubmit={addAdventurer}></AdventureForm>
 
       <div>
-        <PracticeButton name={'Ray'}></PracticeButton>
+        <PracticeButton name={"Ray"}></PracticeButton>
       </div>
     </>
   );
