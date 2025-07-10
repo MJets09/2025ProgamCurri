@@ -27,8 +27,11 @@ function App() {
     team: { city: "houston", franchise: "rockets" },
   };
 
+  const dodgers = ["Shohei", "Betts"];
+
   const [team, updatePlayer] = useState(wolves);
   const [kd, changeTeams] = useState(rockets);
+  const [dodger, addDodger] = useState(dodgers);
 
   return (
     <>
@@ -79,6 +82,22 @@ function App() {
           }}
         >
           Update nesting objects
+        </button>
+        <button
+          onClick={() => {
+            addDodger([...dodger, "Freeman"]);
+            console.log(dodger);
+          }}
+        >
+          Add Dodger, check console log
+        </button>
+        <button
+          onClick={() => {
+            addDodger(dodger.filter((player) => player !== "Freeman"));
+            console.log(dodger);
+          }}
+        >
+          FREDDIEEE
         </button>
       </div>
 
